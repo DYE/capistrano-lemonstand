@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Capistrano-lemonstand : Setup and deploy a LemonStand e-Commerce application onto a unix server" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Capistrano-lemonstand</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/DYE/capistrano-lemonstand">View on GitHub</a>
+
+          <h1 id="project_title">Capistrano-lemonstand</h1>
+          <h2 id="project_tagline">Setup and deploy a LemonStand e-Commerce application onto a unix server</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/DYE/capistrano-lemonstand/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/DYE/capistrano-lemonstand/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>capistrano-lemonstand</h1>
+
+<p>Setup and deploy a LemonStand e-Commerce application onto a unix server using the Capistrano-deployless Ruby lib.</p>
+
+<p>Capistrano is primarily a Ruby on Rails (RoR) deployment tool, so to use this deployment process you will need to use the <a href="https://github.com/leehambley/railsless-deploy/">https://github.com/leehambley/railsless-deploy/</a> gem instead of the default Capistrano gem.</p>
+
+<h2>Installation of RubyGems and railsless-deploy</h2>
+
+<pre><code># gem install railsless-deploy
+</code></pre>
+
+<h2>Usage</h2>
+
+<p>Setup your LemonStand application to use Railsless Deploy of Capistrano</p>
+
+<pre><code># capify .
+</code></pre>
+
+<p>Open your application's <code>Capfile</code> and make it begins like this:</p>
+
+<pre><code>require 'rubygems'
+require 'railsless-deploy'
+load    'config/deploy'
+</code></pre>
+
+<p>Taking care to remove the original <code>require 'deploy'</code> as this is where all the standard tasks are defined.</p>
+
+<p>You should then be able to proceed as you would usually, you may want to familiarise yourself with the truncated list of tasks, you can get a full list with:</p>
+
+<pre><code>$ cap -T
+</code></pre>
+
+<h2>What's in the box?</h2>
+
+<p>If you want to try before you buy, here's the list of tasks included with this version of the deploy recipe:</p>
+
+<pre><code>cap deploy               # Deploys your project.
+cap deploy:check         # Test deployment dependencies.
+cap deploy:cleanup       # Clean up old releases.
+cap deploy:cold          # Deploys and starts a `cold' application.
+cap deploy:pending       # Displays the commits since your last deploy.
+cap deploy:pending:diff  # Displays the `diff' since your last deploy.
+cap deploy:rollback      # Rolls back to a previous version and restarts.
+cap deploy:rollback:code # Rolls back to the previously deployed version.
+cap deploy:setup         # Prepares one or more servers for deployment.
+cap deploy:symlink       # Updates the symlink to the most recently deployed ...
+cap deploy:update        # Copies your project and updates the symlink.
+cap deploy:update_code   # Copies your project to the remote servers.
+cap deploy:upload        # Copy files to the currently deployed version.
+cap invoke               # Invoke a single command on the remote servers.
+cap shell                # Begin an interactive Capistrano session.
+</code></pre>
+
+<h2>Bugs &amp; Feedback</h2>
+
+<p>Fork the project and submit a Pull Request</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Capistrano-lemonstand maintained by <a href="https://github.com/DYE">DYE</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
